@@ -110,6 +110,7 @@ public class DrawObject extends JPanel {
                 dataOut.println("READY:");
             }
         });
+        this.add(readyButton);
     }
 
     void startTask() {
@@ -122,7 +123,7 @@ public class DrawObject extends JPanel {
 
                     while ((message = in.readLine()) != null) {
 
-                        System.out.println("SERVER: " + message);
+                        // System.out.println("SERVER: " + message);
 
                         String[] part = message.split(":");
                         String command = part[0];
