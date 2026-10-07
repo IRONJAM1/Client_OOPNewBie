@@ -93,7 +93,7 @@ public class DrawObject extends JPanel {
         if (status.equals("MAIN")) {
             g.drawImage(bg, 0, 0, this);
         } else if (status.equals("LOBBY")) {
-            showlobby();
+            
         }
         
     }
@@ -101,16 +101,6 @@ public class DrawObject extends JPanel {
     void showlobby() {
         Play.setVisible(false);
         Detail.setVisible(true);
-        String text = isCreator ? "Start" : "Ready";
-        JButton readyButton = new JButton(text);
-        readyButton.addActionListener(e -> {
-            if (isCreator) {
-                dataOut.println("START:");
-            } else {
-                dataOut.println("READY:");
-            }
-        });
-        this.add(readyButton);
     }
 
     void startTask() {
